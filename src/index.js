@@ -1,7 +1,6 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { Switch } from 'antd';
-import JSONSchemaEditor from '@wibetter/json-schema-editor/dist/index.umd';
 import JSONEditor from './main';
 import '@wibetter/json-schema-editor/dist/index.css';
 import './index.scss';
@@ -1400,12 +1399,6 @@ class IndexDemo extends React.PureComponent {
     return (
       <>
         <div className="title-container">
-          <div className="title1-box">
-            <p>
-              <b>JSONSchema</b>:
-              提供可视化界面编辑json格式/结构；(目前主要用于区块的模型设置，定义区块的配置项)
-            </p>
-          </div>
           <div className="title2-box">
             <p>
               <b>JSONEditor</b>:
@@ -1441,17 +1434,6 @@ class IndexDemo extends React.PureComponent {
           </div>
         </div>
         <div className="json-action-container">
-          <div className="json-schema-box">
-            <JSONSchemaEditor
-              data={jsonSchema}
-              onChange={(newJsonSchema) => {
-                console.log('jsonSchemaChange', newJsonSchema);
-                this.setState({
-                  jsonSchema: newJsonSchema,
-                });
-              }}
-            />
-          </div>
           <div className="json-editor-box">
             <JSONEditor
               jsonView={jsonView} // code模式

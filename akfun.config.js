@@ -8,9 +8,9 @@ function resolve(dir) {
 // 包括生产和开发的环境配置信息
 module.exports = {
   settings: {
-    enableESLint: true, // 调试模式是否开启ESLint，默认开启ESLint检测代码格式
+    enableESLint: false, // 调试模式是否开启ESLint，默认开启ESLint检测代码格式
     enableESLintFix: false, // 是否自动修正代码格式，默认不自动修正
-    enableStyleLint: true, // 是否开启StyleLint，默认开启ESLint检测代码格式
+    enableStyleLint: false, // 是否开启StyleLint，默认开启ESLint检测代码格式
     enableStyleLintFix: false // 是否需要StyleLint自动修正代码格式
   },
   webpack: {
@@ -37,24 +37,7 @@ module.exports = {
       },
     },
     // 从输出的 bundle 中排除依赖
-    externals: [
-      {
-        react: {
-          commonjs: 'react',
-          commonjs2: 'react',
-          amd: 'react',
-          root: ['React'],
-        },
-      },
-      {
-        'react-dom': {
-          commonjs: 'react-dom',
-          commonjs2: 'react-dom',
-          amd: 'react-dom',
-          root: ['ReactDOM'],
-        },
-      },
-    ],
+    externals: [],
     template: resolve('./src/index.html'), // 默认html模板
     // sassResources中的sass文件会自动注入每一个sass文件中
     sassResources: [
